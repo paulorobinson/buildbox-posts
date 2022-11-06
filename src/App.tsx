@@ -1,4 +1,5 @@
 import { ThemeProvider } from 'styled-components';
+import Header from './components/Header';
 import { GlobalStyles } from './styles/global';
 
 import { colors } from './styles/theme';
@@ -8,7 +9,7 @@ const App = () => {
     <ThemeProvider theme={colors}>
       <>
         <GlobalStyles />
-        <h1>hello</h1>
+        <Header />
       </>
     </ThemeProvider>
   );
