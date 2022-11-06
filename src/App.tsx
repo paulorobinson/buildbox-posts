@@ -1,15 +1,21 @@
 import { ThemeProvider } from 'styled-components';
+import CreatePost from './components/CreatePost';
 import Header from './components/Header';
 import { GlobalStyles } from './styles/global';
 
-import { colors } from './styles/theme';
+import { theme } from './styles/theme';
+
+import { Container } from './styles';
 
 const App = () => {
   return (
-    <ThemeProvider theme={colors}>
+    <ThemeProvider theme={theme}>
       <>
         <GlobalStyles />
         <Header />
+        <Container>
+          <CreatePost />
+        </Container>
       </>
     </ThemeProvider>
   );

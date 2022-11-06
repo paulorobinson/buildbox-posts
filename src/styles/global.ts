@@ -15,4 +15,16 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
   }
+  
+  input, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: ${({ theme }) => theme.text};
+    
+    border: none;
+    border-radius: 0.5rem;
+    
+    padding: 1.2rem;
+    background-color: ${({ theme }) => theme.border};
+  }
 `;
