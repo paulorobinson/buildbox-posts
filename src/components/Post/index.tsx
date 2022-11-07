@@ -1,3 +1,5 @@
+import { PostsType } from '../../context/Application';
+
 import {
   CloseIcon,
   Container,
@@ -9,7 +11,8 @@ import {
   WrapperHeader,
   WrapperImage,
 } from './styles';
-const Post = () => {
+
+const Post = ({ name, message, URLImage }: PostsType) => {
   return (
     <Container>
       <WrapperHeader>
@@ -17,23 +20,14 @@ const Post = () => {
       </WrapperHeader>
       <WrapperContent>
         <WrapperImage>
-          <ImagePost
-            src="http://github.com/paulorobinson.png"
-            width={100}
-            alt="image"
-          />
+          <ImagePost src={URLImage} alt={name} />
         </WrapperImage>
 
         <section>
-          <MessagePost>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Praesentium, fuga. Cupiditate, veniam architecto consequatur porro
-            autem consequuntur nobis nesciunt tempora explicabo voluptatum vel
-            maxime, blanditiis labore pariatur minima nemo natus.
-          </MessagePost>
+          <MessagePost>{message}</MessagePost>
 
           <TextSendTo>Enviado por:</TextSendTo>
-          <Username>Paulo Robinson</Username>
+          <Username>{name}</Username>
         </section>
       </WrapperContent>
     </Container>

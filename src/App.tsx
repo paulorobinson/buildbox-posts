@@ -7,19 +7,20 @@ import { theme } from './styles/theme';
 
 import { Container } from './styles';
 import Feed from './components/Feed';
+import { ApplicationProvider } from './context/Application';
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <>
+    <ApplicationProvider>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header />
         <Container>
           <CreatePost />
           <Feed />
         </Container>
-      </>
-    </ThemeProvider>
+      </ThemeProvider>
+    </ApplicationProvider>
   );
 };
 
