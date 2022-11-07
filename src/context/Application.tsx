@@ -7,7 +7,7 @@ interface Props {
 }
 
 export interface PostsType {
-  id?: string;
+  id: string;
   name: string;
   message: string;
   URLImage: string;
@@ -15,10 +15,12 @@ export interface PostsType {
 
 interface PropsApplicationContext {
   posts: PostsType[];
+  removePost: (idPost: string) => void;
 }
 
 const ApplicationContext = createContext<PropsApplicationContext>({
   posts: [],
+  removePost: () => {},
 });
 
 const ApplicationProvider: FC<Props> = ({ children }) => {
@@ -45,8 +47,13 @@ const ApplicationProvider: FC<Props> = ({ children }) => {
 
   const [posts, setPosts] = useState<PostsType[]>(INITIAL_STATE);
 
+  const removePost = (idPost: String) => {
+    const filteredTodo = posts.filter(({ id }) => idPost !== id);
+    setPosts(filteredTodo);
+  };
+
   return (
-    <ApplicationContext.Provider value={{ posts }}>
+    <ApplicationContext.Provider value={{ posts, removePost }}>
       {children}
     </ApplicationContext.Provider>
   );

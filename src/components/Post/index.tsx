@@ -1,4 +1,4 @@
-import { PostsType } from '../../context/Application';
+import { PostsType, useApplication } from '../../context/Application';
 
 import {
   CloseIcon,
@@ -12,11 +12,12 @@ import {
   WrapperImage,
 } from './styles';
 
-const Post = ({ name, message, URLImage }: PostsType) => {
+const Post = ({ id, name, message, URLImage }: PostsType) => {
+  const { removePost } = useApplication();
   return (
     <Container>
       <WrapperHeader>
-        <CloseIcon />
+        <CloseIcon onClick={() => removePost(id)} />
       </WrapperHeader>
       <WrapperContent>
         <WrapperImage>

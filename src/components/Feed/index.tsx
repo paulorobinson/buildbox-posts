@@ -7,10 +7,11 @@ const Feed = () => {
 
   return (
     <Container>
-      <SubTitle>Feed</SubTitle>
+      {posts.length !== 0 && <SubTitle>Feed</SubTitle>}
       {posts.map((post) => (
         <Post
           key={post.id}
+          id={post.id}
           name={post.name}
           message={post.message}
           URLImage={post.URLImage}
