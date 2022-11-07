@@ -1,3 +1,4 @@
+import { IoImageOutline } from 'react-icons/io5';
 import styled from 'styled-components';
 
 export const Container = styled.form`
@@ -28,11 +29,13 @@ export const InputUploadFile = styled.label`
   width: 10rem;
   height: 10rem;
 
-  padding: 3.4rem;
-
   input {
     display: none;
   }
+`;
+
+export const ImageIcon = styled(IoImageOutline)`
+  padding: 3.4rem;
 `;
 
 export const ButtonComponent = styled.button``;

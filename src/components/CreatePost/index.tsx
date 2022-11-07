@@ -1,5 +1,6 @@
 import {
   Container,
+  ImageIcon,
   InputText,
   InputTextarea,
   InputUploadFile,
@@ -14,7 +15,7 @@ const CreatePost = () => {
   return (
     <Container>
       <InputUploadFile htmlFor="uploadImage">
-        <IoImageOutline size="100%" />
+        <ImageIcon size="100%" />
         <input
           id="uploadImage"
           name="uploadImage"

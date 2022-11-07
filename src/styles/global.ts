@@ -15,6 +15,10 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
   }
+
+  p {
+    font-size: 1.2rem;
+  }
   
   input, textarea {
     font-family: 'Roboto', sans-serif;

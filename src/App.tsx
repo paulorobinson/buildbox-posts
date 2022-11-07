@@ -6,6 +6,7 @@ import { GlobalStyles } from './styles/global';
 import { theme } from './styles/theme';
 
 import { Container } from './styles';
+import Feed from './components/Feed';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Header />
         <Container>
           <CreatePost />
+          <Feed />
         </Container>
       </>
     </ThemeProvider>
