@@ -27,6 +27,12 @@ export const CloseIcon = styled(IoCloseCircleOutline).attrs({
 export const WrapperContent = styled.section`
   display: flex;
   gap: 2rem;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const MessagePost = styled.p`
