@@ -8,7 +8,7 @@ const Feed = () => {
   return (
     <Container>
       {posts.length !== 0 && <SubTitle>Feed</SubTitle>}
-      {posts.map((post) => (
+      {posts.slice(0).reverse().map((post) => (
         <Post
           key={post.id}
           id={post.id}

@@ -16,44 +16,29 @@ export interface PostsType {
 interface PropsApplicationContext {
   posts: PostsType[];
   removePost: (idPost: string) => void;
+  addPost: (postData: PostsType) => void;
 }
 
 const ApplicationContext = createContext<PropsApplicationContext>({
   posts: [],
   removePost: () => {},
+  addPost: () => {},
 });
 
 const ApplicationProvider: FC<Props> = ({ children }) => {
-  const INITIAL_STATE = [
-    {
-      id: uuidv4(),
-      name: 'Paulo',
-      message: 'lorem ipsum dolor sit am 1',
-      URLImage: 'https://github.com/paulorobinson.png',
-    },
-    {
-      id: uuidv4(),
-      name: 'Robinson',
-      message: 'lorem ipsum dolor sit am 2',
-      URLImage: 'https://github.com/paulorobinson.png',
-    },
-    {
-      id: uuidv4(),
-      name: 'Giaciani',
-      message: 'lorem ipsum dolor sit am 3',
-      URLImage: 'https://github.com/paulorobinson.png',
-    },
-  ];
-
-  const [posts, setPosts] = useState<PostsType[]>(INITIAL_STATE);
+  const [posts, setPosts] = useState<PostsType[]>([]);
 
   const removePost = (idPost: String) => {
     const filteredTodo = posts.filter(({ id }) => idPost !== id);
     setPosts(filteredTodo);
   };
 
+  const addPost = (postData: PostsType) => {
+    setPosts([...posts, postData]);
+  };
+
   return (
-    <ApplicationContext.Provider value={{ posts, removePost }}>
+    <ApplicationContext.Provider value={{ posts, removePost, addPost }}>
       {children}
     </ApplicationContext.Provider>
   );

@@ -1,15 +1,14 @@
 import { PostsType, useApplication } from '../../context/Application';
+import ImagePost from '../ImagePost';
 
 import {
   CloseIcon,
   Container,
-  ImagePost,
   MessagePost,
   TextSendTo,
   Username,
   WrapperContent,
   WrapperHeader,
-  WrapperImage,
 } from './styles';
 
 const Post = ({ id, name, message, URLImage }: PostsType) => {
@@ -20,9 +19,7 @@ const Post = ({ id, name, message, URLImage }: PostsType) => {
         <CloseIcon onClick={() => removePost(id)} />
       </WrapperHeader>
       <WrapperContent>
-        <WrapperImage>
-          <ImagePost src={URLImage} alt={name} />
-        </WrapperImage>
+        <ImagePost URLImage={URLImage} name={name} />
 
         <section>
           <MessagePost>{message}</MessagePost>

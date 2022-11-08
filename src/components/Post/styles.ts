@@ -29,20 +29,6 @@ export const WrapperContent = styled.section`
   gap: 2rem;
 `;
 
-export const WrapperImage = styled.section``;
-
-export const ImagePost = styled.img`
-  border-radius: 40%;
-  border: 1px solid ${({ theme }) => theme.border};
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 10rem;
-  height: 10rem;
-`;
-
 export const MessagePost = styled.p`
   padding-bottom: 2rem;
 `;
