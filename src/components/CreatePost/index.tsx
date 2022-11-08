@@ -39,6 +39,11 @@ const CreatePost = () => {
     reader.readAsDataURL(file as any);
   };
 
+  const handleResetForm = () => {
+    setInputs(INITIAL_STATE);
+    formRef?.current?.reset();
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
@@ -46,8 +51,7 @@ const CreatePost = () => {
 
     addPost(postData);
 
-    setInputs(INITIAL_STATE);
-    formRef?.current?.reset();
+    handleResetForm();
   };
 
   return (
@@ -84,7 +88,9 @@ const CreatePost = () => {
       />
 
       <WrapperFooterButtons>
-        <ResetButton type="reset">Descartar</ResetButton>
+        <ResetButton type="reset" onClick={handleResetForm}>
+          Descartar
+        </ResetButton>
         <SubmitButton disabled={checkEmptyFields} type="submit">
           Publicar
         </SubmitButton>
