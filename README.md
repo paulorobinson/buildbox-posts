@@ -62,6 +62,6 @@ $ npm run dev
 
 Feito por Paulo Robinson Giaciani. Entre em contato!
 
-[![Signature](signature.png)](https://user-images.githubusercontent.com/61739417/200707402-83449e6b-d708-40ff-a6e7-0ba8854b0b94.png)
+[![Signature](https://user-images.githubusercontent.com/61739417/200707402-83449e6b-d708-40ff-a6e7-0ba8854b0b94.png)](https://www.linkedin.com/in/paulo-robinson-giaciani/)
 
 <br>
